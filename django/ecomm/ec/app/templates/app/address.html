@@ -1,0 +1,46 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Address{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        <h3 class="mb-4">Welcome, <span class="text-capitalize text-primary">{{ request.user }}</span></h3>
+
+        <!-- Sidebar Navigation -->
+        <div class="col-md-3">
+            <div class="list-group shadow-sm">
+                <a href="{% url 'profile' %}" class="list-group-item list-group-item-action">Profile</a>
+                <a href="{% url 'address' %}" class="list-group-item list-group-item-action active">Address</a>
+            </div>
+        </div>
+
+        <!-- Address Cards Section -->
+        <div class="col-md-9">
+            <div class="row">
+                {% for ad in add %}
+                <div class="col-md-6">
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Address {{ forloop.counter }}</h5>
+                            <p class="mb-1"><strong>Name:</strong> {{ ad.name }}</p>
+                            <p class="mb-1"><strong>Locality:</strong> {{ ad.locality }}</p>
+                            <p class="mb-1"><strong>Mobile:</strong> {{ ad.mobile }}</p>
+                            <p class="mb-1"><strong>City:</strong> {{ ad.city }}</p>
+                            <p class="mb-1"><strong>State:</strong> {{ ad.state }}</p>
+                            <p class="mb-1"><strong>Pincode:</strong> {{ ad.zipcode }}</p>
+                            <div class="text-center mt-3">
+                                <a href="{% url 'updateAddress' pk=ad.id %}" class="btn btn-success btn-sm">Update</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col-12">
+                    <p class="text-muted text-center">No addresses found. Add a new address.</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
