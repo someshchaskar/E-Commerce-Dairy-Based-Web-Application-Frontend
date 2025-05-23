@@ -1,4 +1,4 @@
-In This (Dairy-Based) Web-Application I've Implemented:
+In This (Dairy-Based) Web-Application Project I've Implemented:
 
 1. Login & Register Authentication and Reset-Password.
 2. Product Category wise images.
