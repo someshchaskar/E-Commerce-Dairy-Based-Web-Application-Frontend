@@ -4,5 +4,5 @@ In This (Dairy-Based) Web-Application Project I've Implemented:
 2. Product Category wise images.
 3. Add to Cart With Products Plus-Minus Functionalities.
 4. Wishlist & Add Addresses.
-5. User Profile Section.
+5. User Profile Section
 AND - For Data Storing Used Django-admin.
